@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
+import router from './router.js'
 
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
@@ -10,7 +11,6 @@ import * as echarts from 'echarts'
 Vue.prototype.$echarts = echarts
 
 import axios from 'axios'
-import './icons'
 
 import store from './components/store'
 import {fabric} from 'fabric'
@@ -23,6 +23,7 @@ Vue.config.productionTip = false
 
 new Vue({
   render: h => h(App),
+  router,
   store,
   components: {
     'chrome-picker':Chrome

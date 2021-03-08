@@ -1,16 +1,24 @@
 <template>
   <div id="app">
-    <HelloWorld />
+    <div id="nav">
+		<router-link to="/">Home</router-link>
+		<router-link to="/brazil">Brazil</router-link>
+		<router-link to="/hawaii">Hawaii</router-link>
+		<router-link to="/panama">Panama</router-link>
+		<router-link to="/jamaica">Jamaica</router-link>
+	</div>
+	<router-view></router-view>
+
   </div>
+  
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    
   }
 }
 </script>
@@ -54,6 +62,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	text-align: center;
 }
 ol, ul {
 	list-style: none;
@@ -69,5 +78,13 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+#nav {
+	text-align: center;
+}
+#nav a {
+	font-weight: bold;
+	color: #2c3e50;
+	padding: 0 10px;
 }
 </style>

@@ -4,8 +4,10 @@ import Vuex from 'vuex';
 
 import moduleA from './moduleA';
 import moduleB from './moduleB';
+import plugins from './plugins';
 Vue.use(Vuex)
 const store = new Vuex.Store({
+    plugins: [plugins],
     modules:{
         moduleA,
         moduleB
