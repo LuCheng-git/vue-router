@@ -2,8 +2,8 @@
 <template>
 <div class='home'>
   <h1>All Destinations</h1>
-  <div class="destinations"
-    v-for="destination in destinations"
+  <div class="destinations">
+  <div v-for="destination in destinations"
     :key="destination.name"
     >
     <router-link :to="destination.slug">
@@ -15,6 +15,7 @@
         :alt="destination.name">
       </router-link>
     </figure>
+    </div>
   </div>
   
 </div>
@@ -66,9 +67,14 @@ activated() {}, //如果页面有keep-alive缓存功能，这个函数会触发
 img {
   max-width: 200px;
 }
+a {
+	font-weight: bold;
+	color: #2c3e50;
+	padding: 0 10px;
+  text-decoration: none;
+}
 .destinations {
   display: flex;
-  justify-content: center;
-  background:red;
+  justify-content: space-around;
 }
 </style>

@@ -86,5 +86,6 @@ table {
 	font-weight: bold;
 	color: #2c3e50;
 	padding: 0 10px;
+	text-decoration: none;
 }
 </style>
