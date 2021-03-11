@@ -22,10 +22,18 @@ import store from '@/store.js'
 export default {
 //import引入的组件需要注入到对象中才能使用
 components: {},
+props:{
+  slug:{
+    slug: {
+      type: String,
+      required: true,
+
+    }
+  }
+},
 data() {
 //这里存放数据
 return {
-  slug: this.$route.params.slug,
   destinations:store.destinations,
 };
 },
