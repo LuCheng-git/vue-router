@@ -11,14 +11,20 @@
 <script>
 import store from '@/store.js'
 export default ({
+  props:{
+    slug: {
+      type: String,
+      required: true,
+
+    }
+  },
   data(){
     return {
-      destinationId:this.$route.params.id
     }
   },
   computed:{
     destination(){
-      return store.destinations.find(destination => destination.id === this.destinationId)
+      return store.destinations.find(destination => destination.slug === this.slug)
     }
   },
 })

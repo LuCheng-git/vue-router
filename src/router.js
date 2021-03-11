@@ -6,17 +6,20 @@ import Home from './views/Home.vue'
 Vue.use(Router)
 
 export default new Router({
+    mode:'history',
     linkExactActiveClass: 'vue-acitve-class',
     routes: [
       {
         path: '/',
         name: 'home',
-        component: Home
+        component: Home,
+        props: true,
       },
       {
-        path: '/details/:id',
+        path: '/details/:slug',
         name: 'DestinationDetails',
-        component: () => import(/* webpackChunkName: 'DestinationDetails' */'./views/DestinationDetails.vue')
+        component: () => import(/* webpackChunkName: 'DestinationDetails' */'./views/DestinationDetails.vue'),
+        props: true,
       },
     ]
 })
