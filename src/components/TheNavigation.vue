@@ -1,25 +1,32 @@
 <!--  -->
 <template>
   <nav id='nav'>
-    <router-link to="/">Home</router-link>
-    <router-link to="/brazil">Brazil</router-link>
-    <router-link to="/panama">Panama</router-link>
-    <router-link to="/hawaii">Hawaii</router-link>
-    <router-link to="/jamaica">Jamaica</router-link>
+    <p class="logo">Travel App</p>
+    <ul class="nav-links">
+      <li class="links">
+        <router-link to="/">Home</router-link>
+      </li>
+      <li v-for="destination in destinations" :key="destination.name" class="links">
+        <router-link :to="{name:'DestinationDetails',params:{id:destination.id}}">
+          {{destination.name}}
+        </router-link>
+      </li>
+    </ul>
   </nav>
 </template>
 
 <script>
 //这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
 //例如：import 《组件名称》 from '《组件路径》';
-
+import store from '@/store.js'
 export default {
 //import引入的组件需要注入到对象中才能使用
 components: {},
 data() {
 //这里存放数据
 return {
-
+  destinationId: this.$route.params.id,
+  destinations:store.destinations,
 };
 },
 //监听属性 类似于data概念
@@ -50,16 +57,25 @@ activated() {}, //如果页面有keep-alive缓存功能，这个函数会触发
 <style scoped>
 #nav {
 	display: flex;
-  justify-content: center;
 }
 #nav a {
 	font-weight: bold;
 	color: #2c3e50;
-	padding: 0 10px;
 	text-decoration: none;
 }
 #nav a.vue-acitve-class{
 	color:#ab26ab
+}
+.nav-links {
+  display: flex;
+}
+.links {
+  margin: 10px ;
+}
+.logo {
+  font-size: 20px;
+  color:purple;
+  font-weight: bold;
 }
 
 </style>
