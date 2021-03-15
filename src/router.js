@@ -20,6 +20,14 @@ export default new Router({
         name: 'DestinationDetails',
         component: () => import(/* webpackChunkName: 'DestinationDetails' */'./views/DestinationDetails.vue'),
         props: true,
+        children:[
+          {
+            path:":experienceSlug",
+            name:'experienceDetails',
+            props: true,
+            component: () => import(/*webpackChunkName: 'ExperienceDetails' */ './views/ExperienceDetails.vue')
+          }
+        ]
       },
     ]
 })
