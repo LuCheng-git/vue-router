@@ -4,7 +4,10 @@
 		<!-- <transition name="slide" mode="out-in" appear>
 		<router-view :key="$route.path"/>
 		</transition> -->
-		<transition name="moveUp" >
+
+		<!-- <transition name="moveUp" > -->
+
+		<transition name="fade" mode="out-in">
 		<router-view :key="$route.path"/>
 		</transition>
   </div>

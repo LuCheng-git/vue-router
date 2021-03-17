@@ -1,7 +1,6 @@
 <!--  -->
 <template>
 <section class=''>
-  <h1>Experiences</h1>
   <h2>{{experience.name}}</h2>
   <div class="experience-details">
     <img :src="require(`@/assets/${experience.image}`)" alt="experience.image">
@@ -75,6 +74,7 @@ activated() {}, //如果页面有keep-alive缓存功能，这个函数会触发
   .experience-details {
     display: flex;
     justify-content: space-between;
+    padding: 200px 0;
   }
   p {
     margin: 0 auto;

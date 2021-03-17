@@ -10,10 +10,10 @@
     </section>
     <section class="experiences">
       <h2>Top experiences in {{ destination.name }}</h2>
-      <div class="cards">
+      <div class="cards" id="experience">
         <div v-for="experience in destination.experiences" :key="experience.slug" class="card">
           <router-link
-            :to="{name:'experienceDetails',params:{experienceSlug: experience.slug}}"
+            :to="{name:'experienceDetails',params:{experienceSlug: experience.slug},hash:'#experience'}"
           >
             <img :src="require(`@/assets/${experience.image}`)" alt="experience.name">
             <span class="card_text">{{experience.name}}</span>
@@ -61,6 +61,9 @@ img {
 .destination-details {
   display: flex;
   justify-content: center;
+}
+.experiences {
+  padding: 40px 0;
 }
 p {
   margin: 0 40px;

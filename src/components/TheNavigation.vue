@@ -65,6 +65,12 @@ activated() {}, //如果页面有keep-alive缓存功能，这个函数会触发
 <style scoped>
 #nav {
 	display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  border-bottom: 1px solid gray;
+  z-index: 2;
 }
 #nav a {
 	font-weight: bold;
