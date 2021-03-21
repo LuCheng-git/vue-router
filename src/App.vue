@@ -104,4 +104,15 @@ table {
 		opacity: 1;
 	}
 }
+
+.input {
+	border: 1px solid green;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+.btn {
+	background-color: green;
+	color: #fff;
+	padding: 10px;
+}
 </style>

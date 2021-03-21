@@ -7,7 +7,7 @@ import store from './store'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
     mode:'history',
     linkExactActiveClass: 'vue-acitve-class',
     scrollBehavior(to, from, savedPosition){
@@ -60,10 +60,37 @@ export default new Router({
         },
       },
       {
+        path: "/user",
+        name: "user",
+        component: () => import(/*webpackChunkName: 'User'*/ './views/User.vue'),
+        meta: {requiresAuth: true},
+      },
+      {
+        path: '/login',
+        name: 'login',
+        component: () => import(/*webpackChunkName: 'Login'*/ './views/Login.vue')
+      },
+      {
         path: "/404",
         alias: '*',
         name: "notFound",
-        component: () => import(/*webpackChunkName: 'NotFound'*/ './views/NotFound.vue')
+        component: () => import(/*webpackChunkName: 'NotFound'*/ './views/NotFound.vue'),
       }
     ]
 })
+
+router.beforeEach((to, from, next) => {
+  if(to.matched.some(record => record.meta.requiresAuth)) {
+    if(!store.user){
+      next({
+        name:"login"
+      })
+    } else {
+      next()
+    }
+  }else {
+    next();
+  }
+})
+
+export default router 
