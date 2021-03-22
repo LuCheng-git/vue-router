@@ -1,36 +1,27 @@
 <!--  -->
 <template>
-<div>
-  <h1>welcome {{user}}</h1>
-  <p>
-    <router-link :to="{name:'invoices'}">Invoices</router-link>
-  </p>
-  <button @click="LogOut" class="btn">Log out</button>
-</div>
+  <div class="">
+    <h1>my invoices</h1>
+  </div>
 </template>
 
 <script>
-import store from '@/store';
+//这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
+//例如：import 《组件名称》 from '《组件路径》';
+
 export default {
   //import引入的组件需要注入到对象中才能使用
   components: {},
   data() {
     //这里存放数据
-    return {
-      user: store.user
-    };
+    return {};
   },
   //监听属性 类似于data概念
   computed: {},
   //监控data中的数据变化
   watch: {},
   //方法集合
-  methods: {
-    LogOut(){
-      store.user = null;
-      this.$router.push('/')
-    }
-  },
+  methods: {},
   //生命周期 - 创建完成（可以访问当前this实例）
   created() {},
   //生命周期 - 挂载完成（可以访问DOM元素）

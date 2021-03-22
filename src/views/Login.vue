@@ -33,7 +33,9 @@ export default {
     login(){
       //用户登录API
       store.user = this.username
-      this.$router.push("/user")
+      // this.$router.push("/user")
+      const redirectPath = this.$route.query.redirect || '/'
+      this.$router.push(redirectPath)
     },
   },
   //生命周期 - 创建完成（可以访问当前this实例）
